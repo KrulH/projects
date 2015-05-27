@@ -32,6 +32,7 @@
 	$fatura =  "urun adi " . $urunadi . " urun adeti " . $urunadet .
 		" urun fiyati " . $urunfiyat . " tutari " . $total . "\n" ;
 
+	// @TODO ensure that the file exists before trying to insert.
 	$file = file_put_contents('liste.txt', $fatura);
 
 	if($file){
