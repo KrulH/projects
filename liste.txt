@@ -1,1 +1,0 @@
-urun adi rulman urun adeti 3 urun fiyati 4 tutari 12
