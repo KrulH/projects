@@ -17,7 +17,7 @@
 	$urunadet = $_POST['adet'];
 	$urunfiyat = $_POST['fiyat'];
 
-	$test = array($urunadet, $urunfiyat);
+	
 	
 	validate_numaric('urun adedi', $urunadet);
 	validate_numaric('urun fiyati', $urunfiyat);	
@@ -33,6 +33,10 @@
 		" urun fiyati " . $urunfiyat . " tutari " . $total . "\n" ;
 
 	// @TODO ensure that the file exists before trying to insert.
+	if (!file_exists('liste.txt')) {echo "dosya yok."
+		;
+	}
+	
 	$file = file_put_contents('liste.txt', $fatura);
 
 	if($file){
