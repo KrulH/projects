@@ -1,19 +1,26 @@
 <?php
+	/**
+	 * Validates a numeric field
+	 * @param string name of the field
+	 * @param float the value of the field
+	 * @return bool
+	 */
+	function validate_numaric($name, $value){
+		if (!is_numeric($value) || empty($value)) {
+			echo $name . " bolumunu dogru giriniz\n";
+			// @TODO return false and handle the error in the future  
+			die();
+		}	
+		return true;
+	}
 	$urunadi = $_POST['urunadi'];
 	$urunadet = $_POST['adet'];
 	$urunfiyat = $_POST['fiyat'];
 
 	$test = array($urunadet, $urunfiyat);
 	
-	if (!is_numeric($urunadet) || empty($urunadet)) {
-		echo "Adet bolumunu dogru giriniz\n"; 
-		die();
-	}
-
-	if (!is_numeric($urunfiyat) || empty($urunfiyat)) {
-		echo "Fiyat sayi olmali.\n";
-		die();
-	}
+	validate_numaric('urun adedi', $urunadet);
+	validate_numaric('urun fiyati', $urunfiyat);	
 
 	if(empty($urunadi)){
 		echo "urun adini doldurunuz"; 
