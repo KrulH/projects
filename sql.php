@@ -9,12 +9,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-echo "Connected successfully";
+echo "Connected successfully". "<br>";
 
-// $sql = "CREATE TABLE kayit (
+// $sql = "CREATE TABLE fatura (
 // id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-// firstname VARCHAR(30) NOT NULL,
-// lastname VARCHAR(30) NOT NULL
+// urunadi VARCHAR(30) NOT NULL,
+// adet int(3) NOT NULL,
+// fiyat int(3) NOT NULL
 // )";
 
 // if ($conn->query($sql) === TRUE) {
