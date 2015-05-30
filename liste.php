@@ -34,19 +34,8 @@ include 'sql.php';
 	$total = $urunadet * $urunfiyat;
 	$fatura =  "urun adi " . $urunadi . " urun adeti " . $urunadet .
 		" urun fiyati " . $urunfiyat . " tutari " . $total . "\n" ;
-	// @TODO ensure that the file exists before trying to insert.
 	
-	
-// 	if (!file_exists('liste.txt')) {echo "dosya yok."
-// 		;
-// 	}
-// 	echo $fatura;
-// 	$file = file_put_contents('liste.txt', $fatura, FILE_APPEND);
-// 	if($file){
-// 		print "fatura eklendi.";
-// 	} else {
-// 		print "fatura eklenmedi.";	
-// 	}
+
 
 	
 	
@@ -57,7 +46,7 @@ include 'sql.php';
 	if ($conn->query($kaydet) === TRUE)
 	
 	{ ECHO "KAYIT edildi". "<br>";}
-	else { echo "error";}
+
 	
 	
 	
