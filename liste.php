@@ -1,11 +1,5 @@
 <?php
-
-include 'sql.php';
-
-
-
-
-
+	include 'sql.php';
 	/**
 	 * Validates a numeric field
 	 * @param string name of the field
@@ -27,28 +21,23 @@ include 'sql.php';
 	
 	validate_numaric('urun adedi', $urunadet);
 	validate_numaric('urun fiyati', $urunfiyat);	
+	
 	if(empty($urunadi)){
 		echo "urun adini doldurunuz"; 
 		die();
 	}
+	
 	$total = $urunadet * $urunfiyat;
 	$fatura =  "urun adi " . $urunadi . " urun adeti " . $urunadet .
 		" urun fiyati " . $urunfiyat . " tutari " . $total . "\n" ;
 	
-
-
-	
-	
 	$kaydet = "INSERT INTO  fatura
-	(id,urunadi, adet, fiyat)
-	VALUES (NULL, '$urunadi', '$urunadet', '$urunfiyat')";
+		(id,urunadi, adet, fiyat)
+		VALUES (NULL, '$urunadi', '$urunadet', '$urunfiyat')";
 	
-	if ($conn->query($kaydet) === TRUE)
-	
-	{ ECHO "KAYIT edildi". "<br>";}
-
-	
-	
+	if ($conn->query($kaydet) === TRUE){ 
+		echo "KAYIT edildi". "<br>";
+	}
 	
 	$sql = "SELECT id, urunadi, adet, fiyat FROM fatura";
 	$result = $conn->query($sql);
@@ -62,21 +51,4 @@ include 'sql.php';
 		echo "0 results";
 	}
 	$conn->close();
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 ?>
