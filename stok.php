@@ -5,15 +5,7 @@
   
   
   
-  
-//   $sql = mysql_query("SELECT invoice.unvan,tablo.urun_ad FROM invoice,tablo
-// 	where invoice.i_id=tablo.i_id");
 
-//   while ($data = mysql_fetch_array($sql)) {
-  	
-//   	echo "$data[2]"
-//   	;
-//   }
   
   
   
