@@ -19,14 +19,6 @@
   				 ;
   	 }
 
-  	 $total = "select (urun_adet*urun_fiyat) from tablo";
-  	
-  	 
-  	 $sonuc = $conn->query($total);
-  	 while($satir = $sonuc->fetch_array()) {
-  	 	
-  	 	echo $satir[0]."<br>";
-  	 }
   	 
   	
   	 
