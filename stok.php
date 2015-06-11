@@ -1,17 +1,48 @@
 <?php
+
   include 'sql.php';
 
+  
+  
+  
+  
+//   $sql = mysql_query("SELECT invoice.unvan,tablo.urun_ad FROM invoice,tablo
+// 	where invoice.i_id=tablo.i_id");
 
-  $sql = "SELECT urun_id, urun_ad FROM urun";
+//   while ($data = mysql_fetch_array($sql)) {
+  	
+//   	echo "$data[2]"
+//   	;
+//   }
+  
+  
+  
+  
+  $sql = "SELECT invoice.*,tablo.* FROM invoice,tablo
+  		where invoice.i_id=tablo.i_id";
+ 
   $result = $conn->query($sql);
   
-  if ($result->num_rows > 0) {
-  	// output data of each row
+  
+  
+  
+  
   	while($row = $result->fetch_assoc()) {
-  		echo $row["urun_id"]." " . $row["urun_ad"]. " " . "<br>"  
+  		echo "fatura no:". $row["i_id"]." " . $row["unvan"].
+  		 " " . $row["Address"]. " ". $row["urun_ad"].
+  		 " ". $row["urun_adet"]." " . $row["urun_fiyat"]. " " . " " . "<br>"  
   				 ;
-  	}
-  } else {
-  	echo "0 results";
-  }
+  	 }
+
+  	 $total = "select (urun_adet*urun_fiyat) from tablo";
+  	
+  	 
+  	 $sonuc = $conn->query($total);
+  	 while($satir = $sonuc->fetch_array()) {
+  	 	
+  	 	echo $satir[0]."<br>";
+  	 }
+  	 
+  	
+  	 
 ?>
