@@ -1,13 +1,6 @@
 <?php
 
   include 'sql.php';
-
-  
-  
-  
-
-  
-  
   
   
   $sql = "SELECT invoice.*,tablo.* FROM invoice,tablo
@@ -20,9 +13,9 @@
   
   
   	while($row = $result->fetch_assoc()) {
-  		echo "fatura no:". $row["i_id"]." " . $row["unvan"].
-  		 " " . $row["Address"]. " ". $row["urun_ad"].
-  		 " ". $row["urun_adet"]." " . $row["urun_fiyat"]. " " . " " . "<br>"  
+  		echo "fatura no:". $row["i_id"]." " ."Musteri Unvani:". $row["unvan"].
+  		 " " ."Musteri adresi:". $row["Address"]. " "."aldigi urun adi:". $row["urun_ad"].
+  		 " "."urun adedi:". $row["urun_adet"]." " ."urun fiyati:". $row["urun_fiyat"]. " "."urun tutari:".$row["urun_adet"]*$row["urun_fiyat"]. "<br>"  
   				 ;
   	 }
 
